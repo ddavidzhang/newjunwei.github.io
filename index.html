@@ -344,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index">
-                    <span itemprop="name">blog</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -383,17 +383,17 @@
       
         
           
-            <h2 id="gitment"><a href="#gitment" class="headerlink" title="gitment"></a>gitment</h2><p><strong>gitment</strong> 是<a href="https://imsun.net/posts/gitment-introduction" target="_blank" rel="noopener">Sun</a>借助github的issues 做的评论组件，在duoshuo服务停用和disqus需要翻墙的境况下，gitment不失为一种暂时的评论技术方案。关于hexo的next主题如何引进gitment，<a href="http://colabug.com/273427.html" target="_blank" rel="noopener">这里</a> 有比较详细的介绍，但有些复杂，其实现在gitment已被next加入配置直接支持，引入其实非常简单。</p>
+            <h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p><strong>Gitment</strong> 是<a href="https://imsun.net/posts/gitment-introduction" target="_blank" rel="noopener">Sun</a>借助github的issues 做的评论组件，在duoshuo服务停用和disqus需要翻墙的境况下，gitment不失为一种暂时的评论技术方案。关于hexo的next主题如何引进gitment，<a href="http://colabug.com/273427.html" target="_blank" rel="noopener">这里</a> 有比较详细的介绍，但有些复杂，其实现在gitment已被next加入配置直接支持，引入其实非常简单。</p>
 <ul>
 <li><p>注册github application</p>
 <blockquote>
-<p>点击<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a>注册，注意<code>Authorization callback URL</code>填自己的网站url 如 <code>http://mocksaber.com</code>.记下<strong>Client ID</strong>和<strong>Client Secret</strong>.</p>
+<p>点击<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a>注册，注意<code>Authorization callback URL</code>填自己的网站url 如 <code>http://mocksaber.com</code>.记下<em>Client ID</em>和<em>Client Secret</em>.</p>
 </blockquote>
 </li>
 <li><p>修改 <code>themes/next/_config.yml</code>  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">393 # Gitment</span><br><span class="line">394 # Introduction: https://imsun.net/posts/gitment-introduction/</span><br><span class="line">395 # You can get your Github ID from https://api.github.com/users/&lt;Github username&gt;</span><br><span class="line">396 gitment:</span><br><span class="line">397   enable: true</span><br><span class="line">398   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway</span><br><span class="line">399   count: true # Show comments count in post meta area</span><br><span class="line">400   lazy: true # Comments lazy loading with a button</span><br><span class="line">401   cleanly: false # Hide &apos;Powered by ...&apos; on footer, and more</span><br><span class="line">402   language: # Force language, or auto switch by theme</span><br><span class="line">403   github_user: yourgithubname # MUST HAVE, Your Github name</span><br><span class="line">404   github_repo: BlogComments # MUST HAVE, The repo you use to store Gitment comments</span><br><span class="line">405   client_id: clientId # MUST HAVE, Github client id for the Gitment</span><br><span class="line">406   client_secret: clientSecret</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>正常来说就可以了，重新部署后对有个显示评论的按钮，现在没篇文章都需要做初始化，后面看gitment的作者有没有后续的简单解决方案。</p>
+<li><p>正常来说到这里就可以了，重新部署后会在文章下面有个显示评论的按钮，现在每篇文章都需要做初始化，后面看gitment的作者有没有后续的简单解决方案。</p>
 </li>
 </ul>
 
