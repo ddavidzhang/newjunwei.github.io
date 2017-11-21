@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="代码规范，编码技巧," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="akka actor, project : jating fast dfs, 尝试存储一些自己博客里面的一些照片 dom,jquery,angular js,java web use go to create some tools use python to create some tools vagarant 试用,">
+<meta name="description" content="关于代码规范最近浏览到一位SE写的程序员为什么这么累系列文章，文章分别在接口、web-controller规范、异常处理、参数校验及国际化等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时的编码是不谋而合的，">
+<meta name="keywords" content="代码规范，编码技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="to-learn">
-<meta property="og:url" content="http://mocksaber.com/2016/05/15/tolearn/index.html">
+<meta property="og:title" content="编码实践技巧之代码规范的重要性">
+<meta property="og:url" content="http://mocksaber.com/2017/11/21/code-princeple/index.html">
 <meta property="og:site_name" content="mock a saber">
-<meta property="og:description" content="akka actor, project : jating fast dfs, 尝试存储一些自己博客里面的一些照片 dom,jquery,angular js,java web use go to create some tools use python to create some tools vagarant 试用,zookeeper 研究">
+<meta property="og:description" content="关于代码规范最近浏览到一位SE写的程序员为什么这么累系列文章，文章分别在接口、web-controller规范、异常处理、参数校验及国际化等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时的编码是不谋而合的，只是自己只是作为一种习惯而没有文档化、规范化。代码规范在一个开发人员多数相对平庸">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-18T01:58:23.000Z">
+<meta property="og:updated_time" content="2017-11-21T16:03:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="to-learn">
-<meta name="twitter:description" content="akka actor, project : jating fast dfs, 尝试存储一些自己博客里面的一些照片 dom,jquery,angular js,java web use go to create some tools use python to create some tools vagarant 试用,zookeeper 研究">
+<meta name="twitter:title" content="编码实践技巧之代码规范的重要性">
+<meta name="twitter:description" content="关于代码规范最近浏览到一位SE写的程序员为什么这么累系列文章，文章分别在接口、web-controller规范、异常处理、参数校验及国际化等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时的编码是不谋而合的，只是自己只是作为一种习惯而没有文档化、规范化。代码规范在一个开发人员多数相对平庸">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://mocksaber.com/2016/05/15/tolearn/"/>
+  <link rel="canonical" href="http://mocksaber.com/2017/11/21/code-princeple/"/>
 
 
 
 
 
-  <title>to-learn | mock a saber</title>
+  <title>编码实践技巧之代码规范的重要性 | mock a saber</title>
   
 
 
@@ -290,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mocksaber.com/2016/05/15/tolearn/">
+    <link itemprop="mainEntityOfPage" href="http://mocksaber.com/2017/11/21/code-princeple/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
@@ -307,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">to-learn</h1>
+          <h1 class="post-title" itemprop="name headline">编码实践技巧之代码规范的重要性</h1>
         
 
         <div class="post-meta">
@@ -319,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T22:48:02+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T23:36:53+08:00">
+                2017-11-21
               </time>
             
 
@@ -338,8 +339,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/05/15/tolearn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2016/05/15/tolearn/" itemprop="commentsCount"></span>
+                <a href="/2017/11/21/code-princeple/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/11/21/code-princeple/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -367,14 +368,21 @@
       
 
       
-        <ul>
-<li>akka actor, project : jating</li>
-<li>fast dfs, 尝试存储一些自己博客里面的一些照片</li>
-<li>dom,jquery,angular js,java web</li>
-<li>use go to create some tools</li>
-<li>use python to create some tools</li>
-<li>vagarant 试用,zookeeper 研究</li>
-</ul>
+        <h1 id="关于代码规范"><a href="#关于代码规范" class="headerlink" title="关于代码规范"></a>关于代码规范</h1><p>最近浏览到一位SE写的<a href="https://github.com/xwjie/PLMCodeTemplate" target="_blank" rel="noopener">程序员为什么这么累</a>系列文章，文章分别在<em>接口</em>、<em>web-controller规范</em>、<em>异常处理</em>、<em>参数校验及国际化</em>等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时的编码是不谋而合的，只是自己只是作为一种习惯而没有文档化、规范化。代码规范在一个开发人员多数相对平庸的项目组里是至关重要的，可以避免很多的坑，即使对于一个相对水平高的项目组来说，好的规范也是必不可少的。这里对作者的总结略作修改如下</p>
+<blockquote>
+<h2 id="开发组长的要求"><a href="#开发组长的要求" class="headerlink" title="开发组长的要求"></a>开发组长的要求</h2><p>定义好代码框架，不要做太多、太细的要求，否则无法落地。</p>
+<ol>
+<li>定义好统一的接口格式、异常、常量等</li>
+<li>多使用AOP和ThreadLocal简化代码</li>
+<li>亲自编写校验函数和工具类</li>
+<li>代码评审中，严格控制函数的参数，不允许出现复杂参数和业务无关的参数</li>
+</ol>
+<h2 id="对开发人员的建议"><a href="#对开发人员的建议" class="headerlink" title="对开发人员的建议"></a>对开发人员的建议</h2><ol>
+<li>不要养成面对debug编程，用日志代替debug</li>
+<li>不要一上来就做整个功能测试，要一行一行代码一个一个函数测试</li>
+</ol>
+</blockquote>
+<p>在后续的文章中，会对添加部分其他的规范，同时分享一些常用的编码过程中比较实用的技巧，本系列文章还是以好的实践为中心，对于技术方面不做过多的深究。</p>
 
       
     </div>
@@ -432,7 +440,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mocksaber.com/2016/05/15/tolearn/" title="to-learn">http://mocksaber.com/2016/05/15/tolearn/</a>
+    <a href="http://mocksaber.com/2017/11/21/code-princeple/" title="编码实践技巧之代码规范的重要性">http://mocksaber.com/2017/11/21/code-princeple/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -445,6 +453,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/代码规范，编码技巧/" rel="tag"># 代码规范，编码技巧</a>
+          
+        </div>
+      
 
       
       
@@ -454,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/15/tolist/" rel="next" title="tolist">
-                <i class="fa fa-chevron-left"></i> tolist
+              <a href="/2017/11/21/gitment/" rel="next" title="利用gitment给hexo blog添加评论">
+                <i class="fa fa-chevron-left"></i> 利用gitment给hexo blog添加评论
               </a>
             
           </div>
@@ -463,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/18/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -603,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于代码规范"><span class="nav-number">1.</span> <span class="nav-text">关于代码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发组长的要求"><span class="nav-number">1.1.</span> <span class="nav-text">开发组长的要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对开发人员的建议"><span class="nav-number">1.2.</span> <span class="nav-text">对开发人员的建议</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
