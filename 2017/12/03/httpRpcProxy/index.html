@@ -83,16 +83,17 @@
 
 
 
-<meta name="description" content="分享与追求，技术与人生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="mock a saber">
-<meta property="og:url" content="http://mocksaber.com/tags/代码规范，编码技巧/index.html">
+<meta name="description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="httpRpcProxy">
+<meta property="og:url" content="http://mocksaber.com/2017/12/03/httpRpcProxy/index.html">
 <meta property="og:site_name" content="mock a saber">
-<meta property="og:description" content="分享与追求，技术与人生">
+<meta property="og:description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-03T01:45:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mock a saber">
-<meta name="twitter:description" content="分享与追求，技术与人生">
+<meta name="twitter:title" content="httpRpcProxy">
+<meta name="twitter:description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
 
 
 
@@ -122,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://mocksaber.com/tags/代码规范，编码技巧/"/>
+  <link rel="canonical" href="http://mocksaber.com/2017/12/03/httpRpcProxy/"/>
 
 
 
 
 
-  <title>标签: 代码规范，编码技巧 | mock a saber</title>
+  <title>httpRpcProxy | mock a saber</title>
   
 
 
@@ -147,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,54 +276,206 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>代码规范，编码技巧<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mocksaber.com/2017/12/03/httpRpcProxy/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mock a saber">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/11/21/code-princeple/" itemprop="url">
-              
-                <span itemprop="name">编码实践技巧之代码规范的重要性</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">httpRpcProxy</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-21T23:36:53+08:00"
-              content="2017-11-21" >
-          11-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T09:44:08+08:00">
+                2017-12-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/03/httpRpcProxy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/03/httpRpcProxy/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># httpRpcProxy</span><br><span class="line">use http to achive RPC(romote process call)</span><br><span class="line"></span><br><span class="line"># 如何使用</span><br><span class="line">1. 可以实际需求自定义http header</span><br><span class="line">2. 略加修改可以支持json和protobuf序列化方式</span><br><span class="line">3. 根据业务需求添加service，通过spring注入bean调用。</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="David wechat" style="width: 200px; max-width: 100%;"/>
+    <div>ex. subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="David 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="David 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    David
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mocksaber.com/2017/12/03/httpRpcProxy/" title="httpRpcProxy">http://mocksaber.com/2017/12/03/httpRpcProxy/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/code-princeple/" rel="next" title="编码实践技巧之代码规范的重要性">
+                <i class="fa fa-chevron-left"></i> 编码实践技巧之代码规范的重要性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +483,18 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -366,7 +531,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -388,7 +553,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -567,6 +732,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -613,6 +782,34 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'newjunwei',
+            repo: 'BlogComments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '920a06247e3438256f027a962b0327c6880448d5',
+            
+                client_id: '137f8b8d0a126ab82f41'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
