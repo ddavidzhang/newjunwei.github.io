@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="rpc," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
+<meta name="description" content="httpRpcProxyuse http to achive RPC(romote process call) 适用场景方便调用一些远端的rest接口 技术原理 借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。  如何使用 可以实际需求自定义http header 略加修改可以支持js">
+<meta name="keywords" content="rpc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="httpRpcProxy">
 <meta property="og:url" content="http://mocksaber.com/2017/12/03/httpRpcProxy/index.html">
 <meta property="og:site_name" content="mock a saber">
-<meta property="og:description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
+<meta property="og:description" content="httpRpcProxyuse http to achive RPC(romote process call) 适用场景方便调用一些远端的rest接口 技术原理 借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。  如何使用 可以实际需求自定义http header 略加修改可以支持json和protobuf序列化方式 根据业务需求添加service，通过sprin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-03T01:45:29.000Z">
+<meta property="og:updated_time" content="2017-12-03T07:06:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="httpRpcProxy">
-<meta name="twitter:description" content="1234567# httpRpcProxyuse http to achive RPC(romote process call)# 如何使用1. 可以实际需求自定义http header2. 略加修改可以支持json和protobuf序列化方式3. 根据业务需求添加service，通过spring注入bean调用。">
+<meta name="twitter:description" content="httpRpcProxyuse http to achive RPC(romote process call) 适用场景方便调用一些远端的rest接口 技术原理 借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。  如何使用 可以实际需求自定义http header 略加修改可以支持json和protobuf序列化方式 根据业务需求添加service，通过sprin">
 
 
 
@@ -367,7 +368,17 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># httpRpcProxy</span><br><span class="line">use http to achive RPC(romote process call)</span><br><span class="line"></span><br><span class="line"># 如何使用</span><br><span class="line">1. 可以实际需求自定义http header</span><br><span class="line">2. 略加修改可以支持json和protobuf序列化方式</span><br><span class="line">3. 根据业务需求添加service，通过spring注入bean调用。</span><br></pre></td></tr></table></figure>
+        <h1 id="httpRpcProxy"><a href="#httpRpcProxy" class="headerlink" title="httpRpcProxy"></a>httpRpcProxy</h1><p>use http to achive RPC(romote process call)</p>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><p>方便调用一些远端的rest接口</p>
+<h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><blockquote>
+<p>借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。</p>
+</blockquote>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
+<li>可以实际需求自定义http header</li>
+<li>略加修改可以支持json和protobuf序列化方式</li>
+<li>根据业务需求添加service，通过spring注入bean调用。<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2></li>
+</ol>
+<p><a href="https://github.com/newjunwei/httpRpcProxy" target="_blank" rel="noopener">httpRpcProxy</a></p>
 
       
     </div>
@@ -437,6 +448,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/rpc/" rel="tag"># rpc</a>
+          
+        </div>
       
 
       
@@ -515,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -553,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -592,6 +618,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#httpRpcProxy"><span class="nav-number">1.</span> <span class="nav-text">httpRpcProxy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#适用场景"><span class="nav-number">1.1.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术原理"><span class="nav-number">1.2.</span> <span class="nav-text">技术原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">1.3.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">1.4.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
