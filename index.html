@@ -382,26 +382,25 @@
       
         
           
-            <h1 id="httpRpcProxy"><a href="#httpRpcProxy" class="headerlink" title="httpRpcProxy"></a>httpRpcProxy</h1><blockquote>
-<p>use http to achive RPC(romote process call)</p>
-</blockquote>
-<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><blockquote>
-<p>方便调用一些远端的rest接口</p>
-</blockquote>
-<h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><blockquote>
-<p>借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。</p>
-</blockquote>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
-<li><p>可以实际需求自定义http header</p>
-</li>
-<li><p>略加修改可以支持json和protobuf序列化方式</p>
-</li>
-<li><p>根据业务需求添加service，通过spring注入bean调用。</p>
-</li>
-</ol>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/newjunwei/httpRpcProxy" target="_blank" rel="noopener">httpRpcProxy</a></p>
+          httpRpcProxy
+use http to achive RPC(romote process call)
 
-          
+适用场景
+方便调用一些远端的rest接口
+
+技术原理
+借助Java动态代理，将带有特定注解的service方法调用改为http远程通信。
+
+如何使用
+可以实际需求自定义http hea
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/03/httpRpcProxy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -540,23 +539,15 @@
       
         
           
-            <h1 id="关于代码规范"><a href="#关于代码规范" class="headerlink" title="关于代码规范"></a>关于代码规范</h1><p>最近浏览到一位SE写的<a href="https://github.com/xwjie/PLMCodeTemplate" target="_blank" rel="noopener">程序员为什么这么累</a>系列文章，文章分别在<em>接口</em>、<em>web-controller规范</em>、<em>异常处理</em>、<em>参数校验及国际化</em>等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时的编码是不谋而合的，只是自己只是作为一种习惯而没有文档化、规范化。代码规范在一个开发人员多数相对平庸的项目组里是至关重要的，可以避免很多的坑，即使对于一个相对水平高的项目组来说，好的规范也是必不可少的。这里对作者的总结略作修改如下</p>
-<blockquote>
-<h2 id="开发组长的要求"><a href="#开发组长的要求" class="headerlink" title="开发组长的要求"></a>开发组长的要求</h2><p>定义好代码框架，不要做太多、太细的要求，否则无法落地。</p>
-<ol>
-<li>定义好统一的接口格式、异常、常量等</li>
-<li>多使用AOP和ThreadLocal简化代码</li>
-<li>亲自编写校验函数和工具类</li>
-<li>代码评审中，严格控制函数的参数，不允许出现复杂参数和业务无关的参数</li>
-</ol>
-<h2 id="对开发人员的建议"><a href="#对开发人员的建议" class="headerlink" title="对开发人员的建议"></a>对开发人员的建议</h2><ol>
-<li>不要养成面对debug编程，用日志代替debug</li>
-<li>不要一上来就做整个功能测试，要一行一行代码一个一个函数测试</li>
-</ol>
-</blockquote>
-<p>在后续的文章中，会对添加部分其他的规范，同时分享一些常用的编码过程中比较实用的技巧，本系列文章还是以好的实践为中心，对于技术方面不做过多的深究。</p>
-
-          
+          关于代码规范最近浏览到一位SE写的程序员为什么这么累系列文章，文章分别在接口、web-controller规范、异常处理、参数校验及国际化等服务端编码方面列举了不少不规范的编码示例，并给出了自己推荐的编码方案。正如作者所说的要求做到的少，不准做的多，这样比较容易落地。其实文章中大部分的思想跟自己平时
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/21/code-princeple/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -717,21 +708,15 @@
       
         
           
-            <h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p><strong>Gitment</strong> 是<a href="https://imsun.net/posts/gitment-introduction" target="_blank" rel="noopener">Sun</a>借助github的issues 做的评论组件，在duoshuo服务停用和disqus需要翻墙的境况下，gitment不失为一种暂时的评论技术方案。关于hexo的next主题如何引进gitment，<a href="http://colabug.com/273427.html" target="_blank" rel="noopener">这里</a> 有比较详细的介绍，但有些复杂，其实现在gitment已被next加入配置直接支持，引入其实非常简单。</p>
-<ul>
-<li><p>注册github application</p>
-<blockquote>
-<p>点击<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a>注册，注意<code>Authorization callback URL</code>填自己的网站url 如 <code>http://mocksaber.com</code>.记下<em>Client ID</em>和<em>Client Secret</em>.</p>
-</blockquote>
-</li>
-<li><p>修改 <code>themes/next/_config.yml</code>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">393 # Gitment</span><br><span class="line">394 # Introduction: https://imsun.net/posts/gitment-introduction/</span><br><span class="line">395 # You can get your Github ID from https://api.github.com/users/&lt;Github username&gt;</span><br><span class="line">396 gitment:</span><br><span class="line">397   enable: true</span><br><span class="line">398   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway</span><br><span class="line">399   count: true # Show comments count in post meta area</span><br><span class="line">400   lazy: true # Comments lazy loading with a button</span><br><span class="line">401   cleanly: false # Hide &apos;Powered by ...&apos; on footer, and more</span><br><span class="line">402   language: # Force language, or auto switch by theme</span><br><span class="line">403   github_user: yourgithubname # MUST HAVE, Your Github name</span><br><span class="line">404   github_repo: BlogComments # MUST HAVE, The repo you use to store Gitment comments</span><br><span class="line">405   client_id: clientId # MUST HAVE, Github client id for the Gitment</span><br><span class="line">406   client_secret: clientSecret</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>正常来说到这里就可以了，重新部署后会在文章下面有个显示评论的按钮，现在每篇文章都需要做初始化，后面看gitment的作者有没有后续的简单解决方案。</p>
-</li>
-</ul>
-
-          
+          GitmentGitment 是Sun借助github的issues 做的评论组件，在duoshuo服务停用和disqus需要翻墙的境况下，gitment不失为一种暂时的评论技术方案。关于hexo的next主题如何引进gitment，这里 有比较详细的介绍，但有些复杂，其实现在gitment已被ne
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/21/gitment/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -870,17 +855,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/18/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1019,16 +1002,21 @@
       
         
           
-            <ul>
-<li>akka actor, project : jating</li>
-<li>fast dfs, 尝试存储一些自己博客里面的一些照片</li>
-<li>dom,jquery,angular js,java web</li>
-<li>use go to create some tools</li>
-<li>use python to create some tools</li>
-<li>vagarant 试用,zookeeper 研究</li>
-</ul>
-
           
+akka actor, project : jating
+fast dfs, 尝试存储一些自己博客里面的一些照片
+dom,jquery,angular js,java web
+use go to create some tools
+use python to create some tools
+v
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/15/tolearn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1167,16 +1155,23 @@
       
         
           
-            <p>这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.</p>
-<ul>
-<li>查看订阅的和知名blog的文章及简讯</li>
-<li>偶尔写自己的blog</li>
-<li>有必要的话要记笔记</li>
-<li>阅读成本的技术书籍</li>
-<li>不断的发现有意思的事情</li>
-</ul>
+          这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.
+
+查看订阅的和知名blog的文章及简讯
+偶尔写自己的blog
+有必要的话要记笔记
+阅读成本的技术书籍
+不断的发现有意思的事情
+
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/15/tolist/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
