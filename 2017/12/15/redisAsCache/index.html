@@ -92,7 +92,7 @@
 <meta property="og:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png">
-<meta property="og:updated_time" content="2017-12-15T16:10:13.000Z">
+<meta property="og:updated_time" content="2017-12-15T16:11:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redisAsCache">
 <meta name="twitter:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
@@ -397,7 +397,7 @@
 <li>写数据库</li>
 </ol>
 <blockquote>
-<p>之所有先del，是防止写数据成功但因网络原因没有更新redis，导致数据不一致。而先del则即使写数据库失败也不会有副作用。</p>
+<p>之所以先del，是防止写数据成功但因网络原因没有更新redis，导致数据不一致。而先del则即使写数据库失败也不会有副作用。</p>
 <p>有些在使用时将del换为set，就是在更新时直接更新缓存，这可以一定程度提高缓存的命中率。但在并发更新时会有概率导致redis跟数据库数据不一致，同时也不能避免上面说的写数据库失败的副作用。另外作为热点数据的缓存，这里set会导致缓存部分非热点的数据，内存有限时反而降低命中率。</p>
 </blockquote>
 <h2 id="并发问题"><a href="#并发问题" class="headerlink" title="并发问题"></a>并发问题</h2><p>按照上面的使用方式基本可以达到使用缓存的目的，但扔存在并发问题，问题出在上面<strong>读取</strong>过程两个步骤之间，有另外一个线程执行了<strong>更新</strong>，那2执行写入redis就会用老数据覆盖掉更新的数据。如何解决呢？采用类似<strong>乐观锁</strong>的原理，在del时不再是简单的删除key，而是写入一个空值标识f1，在未命中写缓存时将get到的标识f1作为参数给redis，只有redis当前value与f1一致时才执行set。基本时序图如下：</p>
