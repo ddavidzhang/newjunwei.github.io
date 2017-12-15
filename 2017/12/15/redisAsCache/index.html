@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="redis cache," />
 
 
 
@@ -83,17 +83,20 @@
 
 
 
-<meta name="description" content="这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.  查看订阅的和知名blog的文章及简讯 偶尔写自己的blog 有必要的话要记笔记 阅读成本的技术书籍 不断的发现有意思的事情">
+<meta name="description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 ">
+<meta name="keywords" content="redis cache">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tolist">
-<meta property="og:url" content="http://mocksaber.com/2016/05/15/tolist/index.html">
+<meta property="og:title" content="redisAsCache">
+<meta property="og:url" content="http://mocksaber.com/2017/12/15/redisAsCache/index.html">
 <meta property="og:site_name" content="mock a saber">
-<meta property="og:description" content="这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.  查看订阅的和知名blog的文章及简讯 偶尔写自己的blog 有必要的话要记笔记 阅读成本的技术书籍 不断的发现有意思的事情">
+<meta property="og:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-18T01:58:23.000Z">
+<meta property="og:image" content="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png">
+<meta property="og:updated_time" content="2017-12-15T16:10:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tolist">
-<meta name="twitter:description" content="这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.  查看订阅的和知名blog的文章及简讯 偶尔写自己的blog 有必要的话要记笔记 阅读成本的技术书籍 不断的发现有意思的事情">
+<meta name="twitter:title" content="redisAsCache">
+<meta name="twitter:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
+<meta name="twitter:image" content="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png">
 
 
 
@@ -123,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://mocksaber.com/2016/05/15/tolist/"/>
+  <link rel="canonical" href="http://mocksaber.com/2017/12/15/redisAsCache/"/>
 
 
 
 
 
-  <title>tolist | mock a saber</title>
+  <title>redisAsCache | mock a saber</title>
   
 
 
@@ -290,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mocksaber.com/2016/05/15/tolist/">
+    <link itemprop="mainEntityOfPage" href="http://mocksaber.com/2017/12/15/redisAsCache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
@@ -307,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tolist</h1>
+          <h1 class="post-title" itemprop="name headline">redisAsCache</h1>
         
 
         <div class="post-meta">
@@ -319,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T20:50:55+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T23:18:02+08:00">
+                2017-12-15
               </time>
             
 
@@ -338,8 +341,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/05/15/tolist/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2016/05/15/tolist/" itemprop="commentsCount"></span>
+                <a href="/2017/12/15/redisAsCache/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/15/redisAsCache/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -347,7 +350,7 @@
 
           
           
-             <span id="/2016/05/15/tolist/" class="leancloud_visitors" data-flag-title="tolist">
+             <span id="/2017/12/15/redisAsCache/" class="leancloud_visitors" data-flag-title="redisAsCache">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,14 +381,27 @@
       
 
       
-        <p>这里呢总结一下感觉每天或者每隔一段时间都应该去做的事情,做是因为这些事都是对自己的进步有益的,周期性做是因为有些东西是需要积累与坚持才有效果.</p>
-<ul>
-<li>查看订阅的和知名blog的文章及简讯</li>
-<li>偶尔写自己的blog</li>
-<li>有必要的话要记笔记</li>
-<li>阅读成本的技术书籍</li>
-<li>不断的发现有意思的事情</li>
-</ul>
+        <h2 id="redis缓存"><a href="#redis缓存" class="headerlink" title="redis缓存"></a>redis缓存</h2><p>在互联网应用中经常需要用redis来缓存热点数据。</p>
+<ol>
+<li>redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量</li>
+<li>减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大</li>
+<li>redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>一般的使用方式是</p>
+<h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><ol>
+<li>先get读取redis，没有读到即未命中则读取db</li>
+<li>将db读到的数据set写入redis，返回数据</li>
+</ol>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ol>
+<li>del掉redis的数据，</li>
+<li>写数据库</li>
+</ol>
+<blockquote>
+<p>之所有先del，是防止写数据成功但因网络原因没有更新redis，导致数据不一致。而先del则即使写数据库失败也不会有副作用。</p>
+<p>有些在使用时将del换为set，就是在更新时直接更新缓存，这可以一定程度提高缓存的命中率。但在并发更新时会有概率导致redis跟数据库数据不一致，同时也不能避免上面说的写数据库失败的副作用。另外作为热点数据的缓存，这里set会导致缓存部分非热点的数据，内存有限时反而降低命中率。</p>
+</blockquote>
+<h2 id="并发问题"><a href="#并发问题" class="headerlink" title="并发问题"></a>并发问题</h2><p>按照上面的使用方式基本可以达到使用缓存的目的，但扔存在并发问题，问题出在上面<strong>读取</strong>过程两个步骤之间，有另外一个线程执行了<strong>更新</strong>，那2执行写入redis就会用老数据覆盖掉更新的数据。如何解决呢？采用类似<strong>乐观锁</strong>的原理，在del时不再是简单的删除key，而是写入一个空值标识f1，在未命中写缓存时将get到的标识f1作为参数给redis，只有redis当前value与f1一致时才执行set。基本时序图如下：</p>
+<p><img src="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png" alt="redis缓存使用时序图"></p>
 
       
     </div>
@@ -438,7 +454,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mocksaber.com/2016/05/15/tolist/" title="tolist">http://mocksaber.com/2016/05/15/tolist/</a>
+    <a href="http://mocksaber.com/2017/12/15/redisAsCache/" title="redisAsCache">http://mocksaber.com/2017/12/15/redisAsCache/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -451,6 +467,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/redis-cache/" rel="tag"># redis cache</a>
+          
+        </div>
+      
 
       
       
@@ -460,15 +482,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/03/httpRpcProxy/" rel="next" title="httpRpcProxy">
+                <i class="fa fa-chevron-left"></i> httpRpcProxy
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/15/tolearn/" rel="prev" title="to-learn">
-                to-learn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +636,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis缓存"><span class="nav-number">1.</span> <span class="nav-text">redis缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取"><span class="nav-number">2.1.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">2.2.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发问题"><span class="nav-number">3.</span> <span class="nav-text">并发问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
