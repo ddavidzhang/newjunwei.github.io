@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 ">
+<meta name="description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题">
 <meta name="keywords" content="redis cache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redisAsCache">
 <meta property="og:url" content="http://mocksaber.com/2017/12/15/redisAsCache/index.html">
 <meta property="og:site_name" content="mock a saber">
-<meta property="og:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
+<meta property="og:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png">
-<meta property="og:updated_time" content="2017-12-15T16:11:58.000Z">
+<meta property="og:updated_time" content="2017-12-16T03:05:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redisAsCache">
-<meta name="twitter:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题  使用一般的使用方式是 读取 先get读取redis，没有读到即未命中则读取db 将db读到的数据set">
+<meta name="twitter:description" content="redis缓存在互联网应用中经常需要用redis来缓存热点数据。  redis数据在内存，可以保证数据读取的高效，接近每秒数十万次的吞吐量 减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大 redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题">
 <meta name="twitter:image" content="http://on-img.com/chart_image/5a33b72ee4b0b9ffb0235ea4.png">
 
 
@@ -342,7 +342,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/15/redisAsCache/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/15/redisAsCache/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/15/redisAsCache/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -387,6 +387,7 @@
 <li>减少下层持久层数据库读取压力，像mongodb，每秒近千次读取就已经表示压力山大</li>
 <li>redis单进程单线程运行，天然具备读写的原子性，避免并发导致脏读等问题</li>
 </ol>
+<a id="more"></a>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>一般的使用方式是</p>
 <h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><ol>
 <li>先get读取redis，没有读到即未命中则读取db</li>
@@ -419,30 +420,6 @@
       </div>
     
 
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="David 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -521,12 +498,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
-      
     </div>
-
   
 
 
@@ -830,47 +802,6 @@
 
 
 
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'newjunwei',
-            repo: 'BlogComments',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '920a06247e3438256f027a962b0327c6880448d5',
-            
-                client_id: '137f8b8d0a126ab82f41'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
@@ -1335,6 +1266,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
